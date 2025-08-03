@@ -1,62 +1,61 @@
 {
-  "build": {
-    "arduino": {
-      "ldscript": "nrf52840_s140_v7_seeed.ld"
-    },
-    "core": "nRF5",
-    "cpu": "cortex-m4",
-    "extra_flags": "-DARDUINO_SEEED_XIAO_NRF52840_SENSE -DNRF52840_XXAA",
-    "f_cpu": "64000000L",
-    "hwids": [
-      [
-        "0x2886",
-        "0x8045"
+    "build": {
+      "arduino":{
+        "ldscript": "nrf52840_xxaa.ld"
+      },
+      "core": "nRF5",
+      "cpu": "cortex-m4",
+      "extra_flags": "-DARDUINO_NRF52840_CIRCUITPLAY -DUSE_LFRC",
+      "f_cpu": "64000000L",
+      "hwids": [
+        [
+          "0x239A",
+          "0x8045"
+        ],
+        [
+          "0x239A",
+          "0x0045"
+        ],
+        [
+          "0x239A",
+          "0x8046"
+        ]
       ],
-      [
-        "0x2886",
-        "0x0045"
-      ]
-    ],
-    "mcu": "nrf52840",
-    "variant": "Seeed_XIAO_nRF52840_Sense",
-    "softdevice": {
-      "sd_flags": "-DS140",
-      "sd_name": "s140",
-      "sd_version": "7.3.0",
-      "sd_fwid": "0x0123"
+      "usb_product": "Circuit Playground Bluefruit",
+      "mcu": "nrf52840_xxaa",
+      "variant": "circuitplayground_nrf52840"
     },
-    "usb_product": "XIAO nRF52840 Sense"
-  },
-  "connectivity": [
-    "bluetooth"
-  ],
-  "debug": {
-    "jlink_device": "nRF52840_xxAA",
-    "openocd_target": "nrf52.cfg",
-    "svd_path": "nrf52840.svd"
-  },
-  "frameworks": [
-    "arduino"
-  ],
-  "name": "Seeed XIAO BLE Sense",
-  "upload": {
-    "maximum_ram_size": 237568,
-    "maximum_size": 823296,
-    "protocol": "adafruit-nrfutil",
-    "speed": 115200,
-    "protocols": [
-      "jlink",
-      "nrfjprog",
-      "nrfutil",
-      "adafruit-nrfutil",
-      "cmsis-dap",
-      "sam-ba",
-      "blackmagic"
+    "bootloaders": {
+      "adafruit": "0xFF000"
+    },
+    "connectivity": [
+      "bluetooth"
     ],
-    "use_1200bps_touch": true,
-    "require_upload_port": true,
-    "wait_for_upload_port": true
-  },
-  "url": "https://wiki.seeedstudio.com/XIAO_BLE",
-  "vendor": "Seeed"
-}
+    "debug": {
+      "jlink_device": "nRF52840_xxAA",
+      "svd_path": "nrf52840.svd"
+    },
+    "frameworks": [
+      "arduino"
+    ],
+    "name": "XIAO nrf52840 Sense",
+    "upload": {
+      "maximum_ram_size": 262144,
+      "maximum_size": 1032192,
+      "speed": 115200,
+      "protocol": "adafruit-nrfutil",
+      "protocols": [
+        "jlink",
+        "nrfjprog",
+        "adafruit-nrfutil",
+        "stlink",
+        "cmsis-dap",
+        "blackmagic"
+      ],
+      "use_1200bps_touch": true,
+      "require_upload_port": true,
+      "wait_for_upload_port": true
+    },
+    "url": "https://www.adafruit.com/product/4333",
+    "vendor": "Adafruit"
+  }
